@@ -17,14 +17,15 @@ import java.util.concurrent.BlockingQueue
  *  play.
  *
  * @author <a href="https://github.com/r8vnhill">R8V</a>
- * @author ~Your name~
+ * @author Daniela Moraga
  */
 class Enemy(
     name: String,
-    weight: Int,
     maxHp: Int,
     defense: Int,
-    turnsQueue: BlockingQueue<GameCharacter>
+    turnsQueue: BlockingQueue<GameCharacter>,
+    weight: Int,
+    val damage: Int //esto lo agregué yop, no estaba
 ) : AbstractCharacter(name, maxHp, defense, turnsQueue) {
     val weight = Require.Stat(weight, "Weight") atLeast 1
 
@@ -36,8 +37,9 @@ class Enemy(
         weight != other.weight         -> false
         maxHp != other.maxHp           -> false
         defense != other.defense       -> false
+        damage != other.damage         -> false //agregado
         else                           -> true
     }
 
-    override fun hashCode() = Objects.hash(Enemy::class, name, weight, maxHp, defense)
+    override fun hashCode() = Objects.hash(Enemy::class, name, maxHp, defense, weight, damage) //agrego damage
 }
