@@ -8,13 +8,13 @@ package cl.uchile.dcc.finalreality.model.character
  *    The name of the character.
  * @property maxHp
  *    The maximum health points of the character.
- * @property defense
- *    The defense of the character.
  * @property currentHp
  *    The current health points of the character.
+ * @property defense
+ *    The defense of the character.
  *
  * @author <a href="https://www.github.com/r8vnhill">R8V</a>
- * @author ~Your name~
+ * @author Daniela Moraga
  */
 interface GameCharacter {
     val name: String
