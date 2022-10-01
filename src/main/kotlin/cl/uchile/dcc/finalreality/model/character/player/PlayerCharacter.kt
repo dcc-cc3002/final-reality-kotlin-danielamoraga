@@ -6,8 +6,8 @@
  * work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
  */
 package cl.uchile.dcc.finalreality.model.character.player
-
-import cl.uchile.dcc.finalreality.model.Weapon
+import cl.uchile.dcc.finalreality.model.character.GameCharacter
+import cl.uchile.dcc.finalreality.model.weapon.Weapon
 
 /**
  * A character controlled by the user.
@@ -17,11 +17,11 @@ import cl.uchile.dcc.finalreality.model.Weapon
  * @author <a href="https://www.github.com/r8vnhill">R8V</a>
  * @author Daniela Moraga
  */
-interface PlayerCharacter {
-  val equippedWeapon: Weapon
+interface PlayerCharacter : GameCharacter {
+    val equippedWeapon: Weapon
 
-  /**
-   * Equips a weapon to the character.
-   */
-  fun equip(weapon: Weapon)
+    /**
+     * Equips a weapon to the character.
+     */
+    fun equip(weapon: Weapon)
 }

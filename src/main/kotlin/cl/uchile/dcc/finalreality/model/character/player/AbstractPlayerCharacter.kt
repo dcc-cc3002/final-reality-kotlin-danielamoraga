@@ -1,6 +1,6 @@
 package cl.uchile.dcc.finalreality.model.character.player
 
-import cl.uchile.dcc.finalreality.model.Weapon
+import cl.uchile.dcc.finalreality.model.weapon.Weapon
 import cl.uchile.dcc.finalreality.model.character.AbstractCharacter
 import cl.uchile.dcc.finalreality.model.character.GameCharacter
 import java.util.concurrent.BlockingQueue

@@ -8,7 +8,7 @@
 package cl.uchile.dcc.finalreality.model.character.player
 
 import cl.uchile.dcc.finalreality.model.character.GameCharacter
-import java.util.*
+import java.util.Objects
 import java.util.concurrent.BlockingQueue
 
 /**
@@ -28,22 +28,22 @@ import java.util.concurrent.BlockingQueue
  * @author Daniela Moraga
  */
 class WhiteMage(
-  name: String,
-  maxHp: Int,
-  maxMp: Int,
-  defense: Int,
-  turnsQueue: BlockingQueue<GameCharacter>
+    name: String,
+    maxHp: Int,
+    maxMp: Int,
+    defense: Int,
+    turnsQueue: BlockingQueue<GameCharacter>
 ) : Mage(name, maxHp, maxMp, defense, turnsQueue) {
 
     override fun equals(other: Any?) = when {
-        this === other                 -> true
-        other !is WhiteMage            -> false
+        this === other -> true
+        other !is WhiteMage -> false
         hashCode() != other.hashCode() -> false
-        name != other.name             -> false
-        maxHp != other.maxHp           -> false
-        maxMp != other.maxMp           -> false
-        defense != other.defense       -> false
-        else                           -> true
+        name != other.name -> false
+        maxHp != other.maxHp -> false
+        maxMp != other.maxMp -> false
+        defense != other.defense -> false
+        else -> true
     }
 
     override fun hashCode() =
@@ -54,6 +54,6 @@ class WhiteMage(
         "maxMp: $maxMp, " +
         "maxHp: $maxHp, " +
         "defense: $defense, " +
-        "currentMp: $currentMp, " +
+        "currentMp: $currentMp " +
         "}"
 }

@@ -1,7 +1,8 @@
 package cl.uchile.dcc.finalreality.model.character
 
 import cl.uchile.dcc.finalreality.exceptions.Require
-import java.util.*
+import cl.uchile.dcc.finalreality.model.character.player.PlayerCharacter
+import java.util.Objects
 import java.util.concurrent.BlockingQueue
 
 /**
@@ -24,22 +25,31 @@ class Enemy(
     maxHp: Int,
     defense: Int,
     turnsQueue: BlockingQueue<GameCharacter>,
-    weight: Int,
-    val damage: Int //esto lo agregué yop, no estaba
-) : AbstractCharacter(name, maxHp, defense, turnsQueue) {
+    weight: Int
+) : AbstractCharacter(name, maxHp, defense, turnsQueue), Attacks {
     val weight = Require.Stat(weight, "Weight") atLeast 1
 
+    override fun attack(target: PlayerCharacter){
+        println("$this attacks $target")
+    }
     override fun equals(other: Any?) = when {
-        this === other                 -> true
-        other !is Enemy                -> false
+        this === other -> true
+        other !is Enemy -> false
         hashCode() != other.hashCode() -> false
-        name != other.name             -> false
-        weight != other.weight         -> false
-        maxHp != other.maxHp           -> false
-        defense != other.defense       -> false
-        damage != other.damage         -> false //agregado
-        else                           -> true
+        name != other.name -> false
+        weight != other.weight -> false
+        maxHp != other.maxHp -> false
+        defense != other.defense -> false
+        else -> true
     }
 
-    override fun hashCode() = Objects.hash(Enemy::class, name, maxHp, defense, weight, damage) //agrego damage
+    override fun hashCode() = Objects.hash(Enemy::class, name, maxHp, defense, weight)
+
+    override fun toString() = "Enemy { " +
+        "name: '$name', " +
+        "maxHp: $maxHp, " +
+        "defense: $defense, " +
+        "currentHp: $currentHp, " +
+        "weight: $weight " +
+        "}"
 }

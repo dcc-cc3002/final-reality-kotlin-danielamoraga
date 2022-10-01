@@ -32,23 +32,22 @@ class Engineer(
     defense: Int,
     turnsQueue: BlockingQueue<GameCharacter>
 ) : AbstractPlayerCharacter(name, maxHp, defense, turnsQueue) {
-
     override fun equals(other: Any?) = when {
-        this === other                 -> true
-        other !is Engineer             -> false
+        this === other -> true
+        other !is Engineer -> false
         hashCode() != other.hashCode() -> false
-        name != other.name             -> false
-        maxHp != other.maxHp           -> false
-        defense != other.defense       -> false
-        else                           -> true
+        name != other.name -> false
+        maxHp != other.maxHp -> false
+        defense != other.defense -> false
+        else -> true
     }
 
-    override fun hashCode() =
-        Objects.hash(Engineer::class, name, maxHp, defense)
+    override fun hashCode() = Objects.hash(Engineer::class, name, maxHp, defense)
 
     override fun toString() = "Engineer { " +
-      "name: '$name', " +
-      "maxHp: $maxHp, " +
-      "defense: $defense " +
-      "}"
+        "name: '$name', " +
+        "maxHp: $maxHp, " +
+        "defense: $defense, " +
+        "currentHp: $currentHp " +
+        "}"
 }

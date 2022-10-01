@@ -30,7 +30,7 @@ import java.util.concurrent.BlockingQueue
 abstract class Mage(
     name: String,
     maxHp: Int,
-    maxMp: Int, //Mana
+    maxMp: Int, // Mana points
     defense: Int,
     turnsQueue: BlockingQueue<GameCharacter>
 ) : AbstractPlayerCharacter(name, maxHp, defense, turnsQueue) {
