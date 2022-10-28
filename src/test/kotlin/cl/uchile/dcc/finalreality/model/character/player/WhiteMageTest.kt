@@ -15,7 +15,6 @@ lateinit var whiteMage3: WhiteMage
 
 class WhiteMageTest : FunSpec({
     beforeEach {
-      // setUpCharacter() ???
       val queue = LinkedBlockingQueue<GameCharacter>()
 
       whiteMage1 = WhiteMage("white mage name", 10, 10, 10, queue)

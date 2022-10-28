@@ -1,6 +1,7 @@
 package cl.uchile.dcc.finalreality.model.character.player
 
 import cl.uchile.dcc.finalreality.model.character.GameCharacter
+import cl.uchile.dcc.finalreality.model.weapon.staff1
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNot
@@ -15,7 +16,6 @@ lateinit var blackMage3: BlackMage
 
 class BlackMageTest : FunSpec({
     beforeEach {
-      // setUpCharacter() ???
       val queue = LinkedBlockingQueue<GameCharacter>()
 
       blackMage1 = BlackMage("black mage name", 10, 10, 10, queue)

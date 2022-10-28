@@ -1,6 +1,7 @@
 package cl.uchile.dcc.finalreality.model.character.player
 
 import cl.uchile.dcc.finalreality.model.character.GameCharacter
+import cl.uchile.dcc.finalreality.model.weapon.knife1
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNot
@@ -15,7 +16,6 @@ lateinit var thief3: Thief
 
 class ThiefTest : FunSpec({
     beforeEach {
-       // setUpGameCharacter() ???
        val queue = LinkedBlockingQueue<GameCharacter>()
 
        thief1 = Thief("name", 10, 10, queue)
@@ -42,5 +42,10 @@ class ThiefTest : FunSpec({
 
     test("A thief and another player character with the same name, maxHP and defense should not have the same hash code") {
        thief1 shouldNot haveSameHashCodeAs(engineer1)
+    }
+
+    test("A thief should be able to equip a weapon"){
+    thief1.equip(knife1)
+    thief1.equippedWeapon shouldBe knife1
     }
 })

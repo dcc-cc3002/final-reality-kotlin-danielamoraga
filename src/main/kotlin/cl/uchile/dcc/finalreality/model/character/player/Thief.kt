@@ -44,7 +44,7 @@ class Thief(
 
     override fun hashCode() = Objects.hash(Thief::class, name, maxHp, defense)
 
-    override fun toString() = "Thief {" +
+    override fun toString() = "Thief { " +
         "name: '$name', " +
         "maxHp: $maxHp, " +
         "defense: $defense, " +
