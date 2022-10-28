@@ -20,13 +20,13 @@ import java.util.concurrent.TimeUnit
  *    The queue with the characters waiting for their turn.
  *
  * @author <a href="https://www.github.com/r8vnhill">R8V</a>
- * @author ~Your name~
+ * @author Daniela Moraga
  */
 abstract class AbstractCharacter(
     override val name: String,
     maxHp: Int,
     defense: Int,
-    private val turnsQueue: BlockingQueue<GameCharacter>,
+    private val turnsQueue: BlockingQueue<GameCharacter>
 ) : GameCharacter {
 
     private lateinit var scheduledExecutor: ScheduledExecutorService

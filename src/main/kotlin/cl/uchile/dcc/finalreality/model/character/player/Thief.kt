@@ -1,5 +1,5 @@
 /*
- * "Final Reality" (c) by R8V and ~Your name~
+ * "Final Reality" (c) by R8V and Daniela Moraga
  * "Final Reality" is licensed under a
  * Creative Commons Attribution 4.0 International License.
  * You should have received a copy of the license along with this
@@ -8,7 +8,7 @@
 package cl.uchile.dcc.finalreality.model.character.player
 
 import cl.uchile.dcc.finalreality.model.character.GameCharacter
-import java.util.*
+import java.util.Objects
 import java.util.concurrent.BlockingQueue
 
 /**
@@ -23,23 +23,31 @@ import java.util.concurrent.BlockingQueue
  * @property currentHp The current HP of the character.
  *
  * @author <a href="https://www.github.com/r8vnhill">R8V</a>
- * @author ~Your name~
+ * @author Daniela Moraga
  */
-class Thief(name: String, maxHp: Int, defense: Int, turnsQueue: BlockingQueue<GameCharacter>) :
-  AbstractPlayerCharacter(name, maxHp, defense, turnsQueue) {
+class Thief(
+    name: String,
+    maxHp: Int,
+    defense: Int,
+    turnsQueue: BlockingQueue<GameCharacter>
+) : AbstractPlayerCharacter(name, maxHp, defense, turnsQueue) {
 
     override fun equals(other: Any?) = when {
-        this === other                 -> true
-        other !is Thief                -> false
+        this === other -> true
+        other !is Thief -> false
         hashCode() != other.hashCode() -> false
-        name != other.name             -> false
-        maxHp != other.maxHp           -> false
-        defense != other.defense       -> false
-        else                           -> true
+        name != other.name -> false
+        maxHp != other.maxHp -> false
+        defense != other.defense -> false
+        else -> true
     }
 
     override fun hashCode() = Objects.hash(Thief::class, name, maxHp, defense)
 
-    override fun toString() =
-      "Thief{maxHp=$maxHp, currentHp=$currentHp, defense=$defense, name='$name'}"
+    override fun toString() = "Thief { " +
+        "name: '$name', " +
+        "maxHp: $maxHp, " +
+        "defense: $defense, " +
+        "currentHp: $currentHp " +
+        "}"
 }
