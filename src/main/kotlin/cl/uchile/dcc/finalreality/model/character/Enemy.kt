@@ -1,7 +1,6 @@
 package cl.uchile.dcc.finalreality.model.character
 
 import cl.uchile.dcc.finalreality.exceptions.Require
-import cl.uchile.dcc.finalreality.model.character.player.PlayerCharacter
 import java.util.Objects
 import java.util.concurrent.BlockingQueue
 
@@ -26,12 +25,9 @@ class Enemy(
     defense: Int,
     turnsQueue: BlockingQueue<GameCharacter>,
     weight: Int
-) : AbstractCharacter(name, maxHp, defense, turnsQueue), Attacks {
+) : AbstractCharacter(name, maxHp, defense, turnsQueue) {
     val weight = Require.Stat(weight, "Weight") atLeast 1
 
-    override fun attack(target: PlayerCharacter){
-        println("$this attacks $target")
-    }
     override fun equals(other: Any?) = when {
         this === other -> true
         other !is Enemy -> false

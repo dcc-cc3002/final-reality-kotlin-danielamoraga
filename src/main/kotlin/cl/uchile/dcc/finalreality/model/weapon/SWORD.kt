@@ -1,5 +1,7 @@
 package cl.uchile.dcc.finalreality.model.weapon
 
+import cl.uchile.dcc.finalreality.model.character.player.Knight
+import cl.uchile.dcc.finalreality.model.character.player.Thief
 import java.util.Objects
 
 /**
@@ -14,7 +16,7 @@ import java.util.Objects
  * @author Daniela Moraga
  */
 
-class SWORD (
+class SWORD(
     name: String,
     damage: Int,
     weight: Int
@@ -37,4 +39,12 @@ class SWORD (
         "damage: $damage, " +
         "weight: $weight " +
         "}"
+
+    override fun equippedByKnight(knight: Knight) {
+        knight.setEquippedWeapon(weapon = this)
+    }
+
+    override fun equippedByThief(thief: Thief) {
+        thief.setEquippedWeapon(weapon = this)
+    }
 }

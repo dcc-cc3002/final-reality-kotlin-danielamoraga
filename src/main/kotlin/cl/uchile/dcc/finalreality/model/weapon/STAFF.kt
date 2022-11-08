@@ -1,5 +1,7 @@
 package cl.uchile.dcc.finalreality.model.weapon
 
+import cl.uchile.dcc.finalreality.model.character.player.BlackMage
+import cl.uchile.dcc.finalreality.model.character.player.WhiteMage
 import java.util.Objects
 
 /**
@@ -14,7 +16,7 @@ import java.util.Objects
  * @author Daniela Moraga
  */
 
-class STAFF (
+class STAFF(
     name: String,
     damage: Int,
     weight: Int
@@ -37,4 +39,12 @@ class STAFF (
         "damage: $damage, " +
         "weight: $weight " +
         "}"
+
+    override fun equippedByBlackMage(blackMage: BlackMage) {
+        blackMage.setEquippedWeapon(weapon = this)
+    }
+
+    override fun equippedByWhiteMage(whiteMage: WhiteMage) {
+        whiteMage.setEquippedWeapon(weapon = this)
+    }
 }

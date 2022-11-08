@@ -18,10 +18,10 @@ import cl.uchile.dcc.finalreality.model.weapon.Weapon
  * @author Daniela Moraga
  */
 interface PlayerCharacter : GameCharacter {
-    val equippedWeapon: Weapon
-
+    val equippedWeapon: Weapon?
     /**
      * Equips a weapon to the character.
      */
     fun equip(weapon: Weapon)
+    fun setEquippedWeapon(weapon: Weapon)
 }

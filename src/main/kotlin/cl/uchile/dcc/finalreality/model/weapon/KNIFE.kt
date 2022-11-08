@@ -1,5 +1,8 @@
 package cl.uchile.dcc.finalreality.model.weapon
 
+import cl.uchile.dcc.finalreality.model.character.player.BlackMage
+import cl.uchile.dcc.finalreality.model.character.player.Knight
+import cl.uchile.dcc.finalreality.model.character.player.Thief
 import java.util.Objects
 
 /**
@@ -14,7 +17,7 @@ import java.util.Objects
  * @author Daniela Moraga
  */
 
-class KNIFE (
+class KNIFE(
     name: String,
     damage: Int,
     weight: Int
@@ -37,4 +40,16 @@ class KNIFE (
         "damage: $damage, " +
         "weight: $weight " +
         "}"
+
+    override fun equippedByKnight(knight: Knight) {
+        knight.setEquippedWeapon(weapon = this)
+    }
+
+    override fun equippedByThief(thief: Thief) {
+        thief.setEquippedWeapon(weapon = this)
+    }
+
+    override fun equippedByBlackMage(blackMage: BlackMage) {
+        blackMage.setEquippedWeapon(weapon = this)
+    }
 }

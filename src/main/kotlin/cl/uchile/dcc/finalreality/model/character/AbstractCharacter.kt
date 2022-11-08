@@ -43,7 +43,7 @@ abstract class AbstractCharacter(
             is PlayerCharacter -> {
                 scheduledExecutor.schedule(
                     /* command = */ ::addToQueue,
-                    /* delay = */ (this.equippedWeapon.weight / 10).toLong(),
+                    /* delay = */ (this.equippedWeapon!!.weight / 10).toLong(),
                     /* unit = */ TimeUnit.SECONDS
                 )
             }

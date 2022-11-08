@@ -1,6 +1,10 @@
 package cl.uchile.dcc.finalreality.model.weapon
 
-import cl.uchile.dcc.finalreality.model.character.player.PlayerCharacter
+import cl.uchile.dcc.finalreality.model.character.player.BlackMage
+import cl.uchile.dcc.finalreality.model.character.player.Engineer
+import cl.uchile.dcc.finalreality.model.character.player.Knight
+import cl.uchile.dcc.finalreality.model.character.player.Thief
+import cl.uchile.dcc.finalreality.model.character.player.WhiteMage
 
 /**
  * A class that holds all the information of a weapon.
@@ -23,7 +27,14 @@ abstract class Weapon(
     val weight: Int
 ) : Item {
 
-    override fun useOn(character: PlayerCharacter){
-        println("$character equips $this")
+    override fun equippedByBlackMage(blackMage: BlackMage) {
+    }
+    override fun equippedByEngineer(engineer: Engineer) {
+    }
+    override fun equippedByKnight(knight: Knight) {
+    }
+    override fun equippedByThief(thief: Thief) {
+    }
+    override fun equippedByWhiteMage(whiteMage: WhiteMage) {
     }
 }

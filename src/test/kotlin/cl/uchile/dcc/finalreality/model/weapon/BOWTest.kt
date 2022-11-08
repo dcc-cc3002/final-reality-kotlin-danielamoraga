@@ -2,40 +2,31 @@ package cl.uchile.dcc.finalreality.model.weapon
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
-import io.kotest.matchers.shouldNot
 import io.kotest.matchers.shouldNotBe
-import io.kotest.matchers.types.haveSameHashCodeAs
 import io.kotest.matchers.types.shouldNotBeSameInstanceAs
 
-lateinit var knife1: KNIFE
-lateinit var knife2: KNIFE
-lateinit var knife3: KNIFE
+class BOWTest : FunSpec({
 
-class KNIFETest : FunSpec({
+    lateinit var bow1: BOW
+    lateinit var bow2: BOW
+    lateinit var bow3: BOW
+
     beforeEach {
-        knife1 = KNIFE("probando",10,10)
-        knife2 = KNIFE("probando",10,10)
-        knife3 = KNIFE("probandon't",20,20)
+        bow1 = BOW("bow", 10, 10)
+        bow2 = BOW("bow", 10, 10)
+        bow3 = BOW("bown't", 20, 20)
     }
 
-    test("Two knifes with the same name, damage and weight should be equals") {
-        knife1 shouldNotBeSameInstanceAs knife2
-        knife1 shouldBe knife2
+    test("Two bows with the same name, damage and weight should be equals") {
+        bow1 shouldNotBeSameInstanceAs bow2
+        bow1 shouldBe bow2
     }
 
-    test("Two knifes with different names, damage or weight should not be equal") {
-        knife1 shouldNotBe knife3
+    test("Two bows with different names, damage or weight should not be equal") {
+        bow1 shouldNotBe bow3
     }
 
-    test("A knife and any other weapon with the same name, damage and weight should not be equal") {
-        knife1 shouldNotBe staff1
-    }
-
-    test("The string representation of a knife should be correct") {
-        "$knife1" shouldBe "KNIFE { name: probando, damage: 10, weight: 10 }"
-    }
-
-    test("A knife and another weapon with the same name, damage and weight should not have the same hash code") {
-        knife1 shouldNot haveSameHashCodeAs(staff1)
+    test("The string representation of a bow should be correct") {
+        "$bow1" shouldBe "BOW { name: bow, damage: 10, weight: 10 }"
     }
 })

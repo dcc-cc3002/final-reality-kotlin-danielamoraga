@@ -17,9 +17,9 @@ class EnemyTest : FunSpec({
     beforeEach {
         val queue = LinkedBlockingQueue<GameCharacter>()
 
-        enemy1 = Enemy("name",10,10,queue,10)
-        enemy2 = Enemy("name",10,10,queue,10)
-        enemy3 = Enemy("other name",15,20,queue,20)
+        enemy1 = Enemy("name", 10, 10, queue, 10)
+        enemy2 = Enemy("name", 10, 10, queue, 10)
+        enemy3 = Enemy("other name", 15, 20, queue, 20)
     }
 
     test("Two enemies with the same name, maxHP, defense and weight should be equals") {
@@ -40,6 +40,6 @@ class EnemyTest : FunSpec({
     }
 
     test("The string representation of an enemy should be correct") {
-        "$enemy1" shouldBe "Enemy { name: 'name', maxHP: 10, defense: 10, currentHP: 10, weight: 10 }"
+        "$enemy1" shouldBe "Enemy { name: 'name', maxHp: 10, defense: 10, currentHp: 10, weight: 10 }"
     }
 })

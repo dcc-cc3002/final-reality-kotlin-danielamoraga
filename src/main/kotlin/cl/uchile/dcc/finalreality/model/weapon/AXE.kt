@@ -1,5 +1,7 @@
 package cl.uchile.dcc.finalreality.model.weapon
 
+import cl.uchile.dcc.finalreality.model.character.player.Engineer
+import cl.uchile.dcc.finalreality.model.character.player.Knight
 import java.util.Objects
 
 /**
@@ -14,7 +16,7 @@ import java.util.Objects
  * @author Daniela Moraga
  */
 
-class AXE (
+class AXE(
     name: String,
     damage: Int,
     weight: Int
@@ -37,4 +39,12 @@ class AXE (
         "damage: $damage, " +
         "weight: $weight " +
         "}"
+
+    override fun equippedByKnight(knight: Knight) {
+        knight.setEquippedWeapon(weapon = this)
+    }
+
+    override fun equippedByEngineer(engineer: Engineer) {
+        engineer.setEquippedWeapon(weapon = this)
+    }
 }

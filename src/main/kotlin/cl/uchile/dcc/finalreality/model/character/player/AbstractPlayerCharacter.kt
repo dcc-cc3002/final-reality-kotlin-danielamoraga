@@ -1,8 +1,8 @@
 package cl.uchile.dcc.finalreality.model.character.player
 
-import cl.uchile.dcc.finalreality.model.weapon.Weapon
 import cl.uchile.dcc.finalreality.model.character.AbstractCharacter
 import cl.uchile.dcc.finalreality.model.character.GameCharacter
+import cl.uchile.dcc.finalreality.model.weapon.Weapon
 import java.util.concurrent.BlockingQueue
 
 /**
@@ -24,11 +24,11 @@ abstract class AbstractPlayerCharacter(
     turnsQueue: BlockingQueue<GameCharacter>
 ) : AbstractCharacter(name, maxHp, defense, turnsQueue), PlayerCharacter {
 
-    private lateinit var _equippedWeapon: Weapon
-    override val equippedWeapon: Weapon
+    private var _equippedWeapon: Weapon? = null
+    override val equippedWeapon: Weapon?
         get() = _equippedWeapon
 
-    override fun equip(weapon: Weapon) {
+    override fun setEquippedWeapon(weapon: Weapon) {
         _equippedWeapon = weapon
     }
 }

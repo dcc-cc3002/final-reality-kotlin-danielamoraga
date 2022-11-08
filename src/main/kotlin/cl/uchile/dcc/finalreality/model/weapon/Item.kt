@@ -1,6 +1,10 @@
 package cl.uchile.dcc.finalreality.model.weapon
 
-import cl.uchile.dcc.finalreality.model.character.player.PlayerCharacter
+import cl.uchile.dcc.finalreality.model.character.player.BlackMage
+import cl.uchile.dcc.finalreality.model.character.player.Engineer
+import cl.uchile.dcc.finalreality.model.character.player.Knight
+import cl.uchile.dcc.finalreality.model.character.player.Thief
+import cl.uchile.dcc.finalreality.model.character.player.WhiteMage
 
 /**
  * An Item is something player chacarters can use
@@ -12,5 +16,9 @@ interface Item {
     /**
      * Use the Item on a player character
      */
-    fun useOn(character: PlayerCharacter)
+    fun equippedByBlackMage(blackMage: BlackMage)
+    fun equippedByEngineer(engineer: Engineer)
+    fun equippedByKnight(knight: Knight)
+    fun equippedByThief(thief: Thief)
+    fun equippedByWhiteMage(whiteMage: WhiteMage)
 }
