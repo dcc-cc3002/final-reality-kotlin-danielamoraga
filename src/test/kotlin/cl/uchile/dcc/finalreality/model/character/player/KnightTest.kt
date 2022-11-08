@@ -12,6 +12,15 @@ import io.kotest.matchers.shouldNotBe
 import io.kotest.matchers.types.shouldNotBeSameInstanceAs
 import java.util.concurrent.LinkedBlockingQueue
 
+/**
+ * Tests for the class Knight and its methods
+ * including inherited methods from father classes
+ *
+ * @constructor creates tests for knight
+ *
+ * @author Daniela Moraga
+ */
+
 class KnightTest : FunSpec({
 
     lateinit var knight1: Knight

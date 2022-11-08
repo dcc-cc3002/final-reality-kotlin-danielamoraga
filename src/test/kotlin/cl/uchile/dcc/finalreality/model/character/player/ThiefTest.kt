@@ -12,6 +12,14 @@ import io.kotest.matchers.shouldNotBe
 import io.kotest.matchers.types.shouldNotBeSameInstanceAs
 import java.util.concurrent.LinkedBlockingQueue
 
+/**
+ * Tests for the class Thief and its methods
+ * including inherited methods from father classes
+ *
+ * @constructor creates tests for thief
+ *
+ * @author Daniela Moraga
+ */
 class ThiefTest : FunSpec({
 
     lateinit var thief1: Thief

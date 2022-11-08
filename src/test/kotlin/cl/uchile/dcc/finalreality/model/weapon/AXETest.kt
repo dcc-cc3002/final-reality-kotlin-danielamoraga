@@ -5,6 +5,15 @@ import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import io.kotest.matchers.types.shouldNotBeSameInstanceAs
 
+/**
+ * Tests for the class AXE and its methods
+ * including inherited methods from father classes
+ *
+ * @constructor creates tests for axe
+ *
+ * @author Daniela Moraga
+ */
+
 class AXETest : FunSpec({
 
     lateinit var axe1: AXE

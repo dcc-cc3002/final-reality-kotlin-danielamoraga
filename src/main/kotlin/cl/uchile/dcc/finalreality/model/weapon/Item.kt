@@ -14,11 +14,23 @@ import cl.uchile.dcc.finalreality.model.character.player.WhiteMage
  */
 interface Item {
     /**
-     * Use the Item on a player character
+     * Use the Item on a black mage
      */
     fun equippedByBlackMage(blackMage: BlackMage)
+    /**
+     * Use the Item on an engineer
+     */
     fun equippedByEngineer(engineer: Engineer)
+    /**
+     * Use the Item on a knight
+     */
     fun equippedByKnight(knight: Knight)
+    /**
+     * Use the Item on a thief
+     */
     fun equippedByThief(thief: Thief)
+    /**
+     * Use the Item on a white mage
+     */
     fun equippedByWhiteMage(whiteMage: WhiteMage)
 }

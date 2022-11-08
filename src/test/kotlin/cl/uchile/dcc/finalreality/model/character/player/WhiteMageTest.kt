@@ -10,6 +10,15 @@ import io.kotest.matchers.shouldNotBe
 import io.kotest.matchers.types.shouldNotBeSameInstanceAs
 import java.util.concurrent.LinkedBlockingQueue
 
+/**
+ * Tests for the class WhiteMage and its methods
+ * including inherited methods from father classes
+ *
+ * @constructor creates tests for white mage
+ *
+ * @author Daniela Moraga
+ */
+
 class WhiteMageTest : FunSpec({
 
     lateinit var whiteMage1: WhiteMage

@@ -5,6 +5,14 @@ import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import io.kotest.matchers.types.shouldNotBeSameInstanceAs
 
+/**
+ * Tests for the class SWORD and its methods
+ * including inherited methods from father classes
+ *
+ * @constructor creates tests for sword
+ *
+ * @author Daniela Moraga
+ */
 class SWORDTest : FunSpec({
 
     lateinit var sword1: SWORD

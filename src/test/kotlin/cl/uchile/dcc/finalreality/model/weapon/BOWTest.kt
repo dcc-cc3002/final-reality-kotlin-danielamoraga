@@ -5,6 +5,14 @@ import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import io.kotest.matchers.types.shouldNotBeSameInstanceAs
 
+/**
+ * Tests for the class BOW and its methods
+ * including inherited methods from father classes
+ *
+ * @constructor creates tests for bow
+ *
+ * @author Daniela Moraga
+ */
 class BOWTest : FunSpec({
 
     lateinit var bow1: BOW

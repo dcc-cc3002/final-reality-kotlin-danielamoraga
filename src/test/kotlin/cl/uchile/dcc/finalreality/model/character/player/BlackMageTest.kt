@@ -11,6 +11,15 @@ import io.kotest.matchers.shouldNotBe
 import io.kotest.matchers.types.shouldNotBeSameInstanceAs
 import java.util.concurrent.LinkedBlockingQueue
 
+/**
+ * Tests for the class BlackMage and its methods
+ * including inherited methods from father classes
+ *
+ * @constructor creates tests for black mage
+ *
+ * @author Daniela Moraga
+ */
+
 class BlackMageTest : FunSpec({
 
     lateinit var blackMage1: BlackMage

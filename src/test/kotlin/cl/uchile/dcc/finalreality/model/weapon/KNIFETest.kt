@@ -5,6 +5,14 @@ import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import io.kotest.matchers.types.shouldNotBeSameInstanceAs
 
+/**
+ * Tests for the class KNIFE and its methods
+ * including inherited methods from father classes
+ *
+ * @constructor creates tests for knife
+ *
+ * @author Daniela Moraga
+ */
 class KNIFETest : FunSpec({
 
     lateinit var knife1: KNIFE

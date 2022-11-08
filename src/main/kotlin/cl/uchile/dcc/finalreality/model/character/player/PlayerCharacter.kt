@@ -23,5 +23,8 @@ interface PlayerCharacter : GameCharacter {
      * Equips a weapon to the character.
      */
     fun equip(weapon: Weapon)
+    /**
+     * Equips a weapon to the character.
+     */
     fun setEquippedWeapon(weapon: Weapon)
 }
