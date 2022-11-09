@@ -7,20 +7,19 @@
  */
 package cl.uchile.dcc.finalreality.model.character.player
 
+import cl.uchile.dcc.finalreality.exceptions.Require
 import cl.uchile.dcc.finalreality.model.character.GameCharacter
-import cl.uchile.dcc.finalreality.model.weapon.Item
-import java.util.Objects
 import java.util.concurrent.BlockingQueue
 
 /**
- * A Black Mage is a type of player character that can cast black magic.
+ * A Mage is a type of player character that can cast magic.
  *
  * @param name        the character's name
  * @param maxHp       the character's maximum health points
  * @param maxMp       the character's maximum magic points
  * @param defense     the character's defense
  * @param turnsQueue  the queue with the characters waiting for their turn
- * @constructor Creates a new Black Mage.
+ * @constructor Creates a new Mage.
  *
  * @property currentMp The current MP of the character.
  * @property currentHp The current HP of the character.
@@ -28,37 +27,17 @@ import java.util.concurrent.BlockingQueue
  * @author <a href="https://www.github.com/r8vnhill">R8V</a>
  * @author Daniela Moraga
  */
-class BlackMage(
+abstract class Mage(
     name: String,
     maxHp: Int,
-    maxMp: Int, // Mana
+    maxMp: Int, // Mana points
     defense: Int,
     turnsQueue: BlockingQueue<GameCharacter>
-) : Mage(name, maxHp, maxMp, defense, turnsQueue) {
+) : AbstractPlayerCharacter(name, maxHp, defense, turnsQueue) {
 
-    override fun equals(other: Any?) = when {
-        this === other -> true
-        other !is BlackMage -> false
-        hashCode() != other.hashCode() -> false
-        name != other.name -> false
-        maxHp != other.maxHp -> false
-        maxMp != other.maxMp -> false
-        defense != other.defense -> false
-        else -> true
-    }
-
-    override fun hashCode() =
-        Objects.hash(BlackMage::class, name, maxHp, maxMp, defense)
-
-    override fun toString() = "BlackMage { " +
-        "name: '$name', " +
-        "maxMp: $maxMp, " +
-        "maxHp: $maxHp, " +
-        "defense: $defense, " +
-        "currentMp: $currentMp " +
-        "}"
-
-    override fun equip(item: Item) {
-        item.equippedByBlackMage(this)
-    }
+    val maxMp = Require.Stat(maxMp, "Max MP") atLeast 0
+    var currentMp: Int = maxMp
+        set(value) {
+            field = Require.Stat(value, "Current MP") inRange 0..maxMp
+        }
 }
