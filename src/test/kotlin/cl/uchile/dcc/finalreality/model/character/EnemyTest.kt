@@ -9,11 +9,21 @@ import io.kotest.matchers.types.haveSameHashCodeAs
 import io.kotest.matchers.types.shouldNotBeSameInstanceAs
 import java.util.concurrent.LinkedBlockingQueue
 
-lateinit var enemy1: Enemy
-lateinit var enemy2: Enemy
-lateinit var enemy3: Enemy
+/**
+ * Tests for the class Enemy and its methods
+ * including inherited methods from father classes
+ *
+ * @constructor creates tests for black mage
+ *
+ * @author Daniela Moraga
+ */
 
 class EnemyTest : FunSpec({
+
+    lateinit var enemy1: Enemy
+    lateinit var enemy2: Enemy
+    lateinit var enemy3: Enemy
+
     beforeEach {
         val queue = LinkedBlockingQueue<GameCharacter>()
 

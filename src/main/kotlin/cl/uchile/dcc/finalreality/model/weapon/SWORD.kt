@@ -41,10 +41,10 @@ class SWORD(
         "}"
 
     override fun equippedByKnight(knight: Knight) {
-        knight.setEquippedWeapon(weapon = this)
+        knight.setEquippedWeapon(item = this)
     }
 
     override fun equippedByThief(thief: Thief) {
-        thief.setEquippedWeapon(weapon = this)
+        thief.setEquippedWeapon(item = this)
     }
 }

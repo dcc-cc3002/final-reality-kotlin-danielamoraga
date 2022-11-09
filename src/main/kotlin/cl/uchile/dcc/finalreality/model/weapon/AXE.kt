@@ -41,10 +41,10 @@ class AXE(
         "}"
 
     override fun equippedByKnight(knight: Knight) {
-        knight.setEquippedWeapon(weapon = this)
+        knight.setEquippedWeapon(item = this)
     }
 
     override fun equippedByEngineer(engineer: Engineer) {
-        engineer.setEquippedWeapon(weapon = this)
+        engineer.setEquippedWeapon(item = this)
     }
 }

@@ -3,6 +3,8 @@ package cl.uchile.dcc.finalreality.model.character
 import cl.uchile.dcc.finalreality.exceptions.Require
 import java.util.Objects
 import java.util.concurrent.BlockingQueue
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 
 /**
  * A class that holds all the information of a single enemy of the game.
@@ -48,4 +50,13 @@ class Enemy(
         "currentHp: $currentHp, " +
         "weight: $weight " +
         "}"
+
+    override fun waitTurn() {
+        scheduledExecutor = Executors.newSingleThreadScheduledExecutor()
+        scheduledExecutor.schedule(
+            /* command = */ ::addToQueue,
+            /* delay = */ ((this).weight / 10).toLong(),
+            /* unit = */ TimeUnit.SECONDS
+        )
+    }
 }

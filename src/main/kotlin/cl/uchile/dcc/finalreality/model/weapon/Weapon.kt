@@ -24,7 +24,7 @@ import cl.uchile.dcc.finalreality.model.character.player.WhiteMage
 abstract class Weapon(
     val name: String,
     val damage: Int,
-    val weight: Int
+    override val weight: Int
 ) : Item {
 
     override fun equippedByBlackMage(blackMage: BlackMage) {

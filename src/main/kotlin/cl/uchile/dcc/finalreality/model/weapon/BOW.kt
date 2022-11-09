@@ -41,10 +41,10 @@ class BOW(
         "}"
 
     override fun equippedByEngineer(engineer: Engineer) {
-        engineer.setEquippedWeapon(weapon = this)
+        engineer.setEquippedWeapon(item = this)
     }
 
     override fun equippedByThief(thief: Thief) {
-        thief.setEquippedWeapon(weapon = this)
+        thief.setEquippedWeapon(item = this)
     }
 }

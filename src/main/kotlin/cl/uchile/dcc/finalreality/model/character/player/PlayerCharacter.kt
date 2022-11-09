@@ -7,7 +7,7 @@
  */
 package cl.uchile.dcc.finalreality.model.character.player
 import cl.uchile.dcc.finalreality.model.character.GameCharacter
-import cl.uchile.dcc.finalreality.model.weapon.Weapon
+import cl.uchile.dcc.finalreality.model.weapon.Item
 
 /**
  * A character controlled by the user.
@@ -18,13 +18,13 @@ import cl.uchile.dcc.finalreality.model.weapon.Weapon
  * @author Daniela Moraga
  */
 interface PlayerCharacter : GameCharacter {
-    val equippedWeapon: Weapon?
+    val equippedWeapon: Item?
     /**
      * Equips a weapon to the character.
      */
-    fun equip(weapon: Weapon)
+    fun equip(item: Item)
     /**
      * Equips a weapon to the character.
      */
-    fun setEquippedWeapon(weapon: Weapon)
+    fun setEquippedWeapon(item: Item)
 }

@@ -41,10 +41,10 @@ class STAFF(
         "}"
 
     override fun equippedByBlackMage(blackMage: BlackMage) {
-        blackMage.setEquippedWeapon(weapon = this)
+        blackMage.setEquippedWeapon(item = this)
     }
 
     override fun equippedByWhiteMage(whiteMage: WhiteMage) {
-        whiteMage.setEquippedWeapon(weapon = this)
+        whiteMage.setEquippedWeapon(item = this)
     }
 }

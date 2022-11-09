@@ -13,6 +13,8 @@ import cl.uchile.dcc.finalreality.model.character.player.WhiteMage
  * @author Daniela Moraga
  */
 interface Item {
+    val weight: Int
+
     /**
      * Use the Item on a black mage
      */

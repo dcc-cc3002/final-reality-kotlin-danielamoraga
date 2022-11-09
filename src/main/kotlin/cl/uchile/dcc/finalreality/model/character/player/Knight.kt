@@ -8,7 +8,7 @@
 package cl.uchile.dcc.finalreality.model.character.player
 
 import cl.uchile.dcc.finalreality.model.character.GameCharacter
-import cl.uchile.dcc.finalreality.model.weapon.Weapon
+import cl.uchile.dcc.finalreality.model.weapon.Item
 import java.util.Objects
 import java.util.concurrent.BlockingQueue
 
@@ -52,7 +52,7 @@ class Knight(
         "currentHp: $currentHp " +
         "}"
 
-    override fun equip(weapon: Weapon) {
-        weapon.equippedByKnight(this)
+    override fun equip(item: Item) {
+        item.equippedByKnight(this)
     }
 }
